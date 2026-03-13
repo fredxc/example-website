@@ -1,17 +1,17 @@
-import React from 'react';
-import { CheckCircle } from 'lucide-react';
-import { motion } from 'motion/react';
-import { useLanguage } from '../context/LanguageContext';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import React from "react";
+import { CheckCircle } from "lucide-react";
+import { motion } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export const AboutSection: React.FC = () => {
   const { t } = useLanguage();
 
   const highlights = [
-    'Mais de 5 anos na Europa',
-    'Certificação profissional',
-    'Fluente em português, inglês e holandês',
-    'Experiência com clientes brasileiros',
+    t("about.highlight1"),
+    t("about.highlight2"),
+    t("about.highlight3"),
+    t("about.highlight4"),
   ];
 
   return (
@@ -43,7 +43,7 @@ export const AboutSection: React.FC = () => {
               className="absolute -bottom-6 -right-6 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl p-6 shadow-xl text-white"
             >
               <div className="text-3xl font-bold">5+</div>
-              <div className="text-sm opacity-90">Anos de experiência</div>
+              <div className="text-sm opacity-90">{t("about.yearsExp")}</div>
             </motion.div>
           </motion.div>
 
@@ -55,15 +55,15 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-block bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              {t('about.title')}
+              {t("about.title")}
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 text-gray-900">
-              Profissional brasileiro(a) comprometido(a) com você
+              {t("about.heading")}
             </h2>
 
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              {t('about.text')}
+              {t("about.text")}
             </p>
 
             {/* Highlights */}
@@ -88,16 +88,18 @@ export const AboutSection: React.FC = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
               <div>
-                <div className="text-2xl font-bold text-gray-900 mb-1">500+</div>
-                <div className="text-sm text-gray-600">Clientes</div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">
+                  500+
+                </div>
+                <div className="text-sm text-gray-600">{t("about.stat1")}</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">98%</div>
-                <div className="text-sm text-gray-600">Satisfação</div>
+                <div className="text-sm text-gray-600">{t("about.stat2")}</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">24h</div>
-                <div className="text-sm text-gray-600">Resposta</div>
+                <div className="text-sm text-gray-600">{t("about.stat3")}</div>
               </div>
             </div>
           </motion.div>

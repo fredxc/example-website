@@ -1,9 +1,9 @@
-import React from 'react';
-import { MessageCircle, ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
-import { useLanguage } from '../context/LanguageContext';
-import { Button } from './ui/button';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import React from "react";
+import { MessageCircle, ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
+import { Button } from "./ui/button";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export const HeroSection: React.FC = () => {
   const { t } = useLanguage();
@@ -31,7 +31,9 @@ export const HeroSection: React.FC = () => {
               className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-amber-200 mb-6"
             >
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm text-gray-700">Disponível para atendimento</span>
+              <span className="text-sm text-gray-700">
+                {t("hero.available")}
+              </span>
             </motion.div>
 
             <motion.h1
@@ -40,7 +42,7 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-4xl md:text-5xl lg:text-6xl mb-6 text-gray-900 leading-tight"
             >
-              {t('hero.title')}
+              {t("hero.title")}
             </motion.h1>
 
             <motion.p
@@ -49,7 +51,7 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed"
             >
-              {t('hero.subtitle')}
+              {t("hero.subtitle")}
             </motion.p>
 
             <motion.div
@@ -59,23 +61,25 @@ export const HeroSection: React.FC = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Button
-                onClick={() => window.open('https://wa.me/31612345678', '_blank')}
+                onClick={() =>
+                  window.open("https://wa.me/31612345678", "_blank")
+                }
                 className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-full px-8 py-6 text-lg shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/30 transition-all"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                {t('hero.cta')}
+                {t("hero.cta")}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
 
               <Button
                 onClick={() => {
-                  const element = document.getElementById('services');
-                  element?.scrollIntoView({ behavior: 'smooth' });
+                  const element = document.getElementById("services");
+                  element?.scrollIntoView({ behavior: "smooth" });
                 }}
                 variant="outline"
                 className="border-2 border-gray-300 hover:border-amber-500 hover:bg-amber-50 text-gray-900 rounded-full px-8 py-6 text-lg transition-all"
               >
-                Saiba mais
+                {t("hero.learnMore")}
               </Button>
             </motion.div>
 
@@ -88,17 +92,19 @@ export const HeroSection: React.FC = () => {
             >
               <div>
                 <div className="text-2xl font-semibold text-gray-900">500+</div>
-                <div className="text-sm text-gray-600">Clientes atendidos</div>
+                <div className="text-sm text-gray-600">{t("hero.stat1")}</div>
               </div>
               <div className="w-px h-12 bg-gray-200" />
               <div>
-                <div className="text-2xl font-semibold text-gray-900">4.9/5</div>
-                <div className="text-sm text-gray-600">Avaliação média</div>
+                <div className="text-2xl font-semibold text-gray-900">
+                  4.9/5
+                </div>
+                <div className="text-sm text-gray-600">{t("hero.stat2")}</div>
               </div>
               <div className="w-px h-12 bg-gray-200" />
               <div>
                 <div className="text-2xl font-semibold text-gray-900">5+</div>
-                <div className="text-sm text-gray-600">Anos na Europa</div>
+                <div className="text-sm text-gray-600">{t("hero.stat3")}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -116,7 +122,7 @@ export const HeroSection: React.FC = () => {
                 alt="Professional consultation"
                 className="w-full h-full object-cover"
               />
-              
+
               {/* Floating card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -129,8 +135,12 @@ export const HeroSection: React.FC = () => {
                     <MessageCircle className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-sm text-gray-600">Resposta em</div>
-                    <div className="font-semibold text-gray-900">Menos de 1 hora</div>
+                    <div className="text-sm text-gray-600">
+                      {t("hero.responseLabel")}
+                    </div>
+                    <div className="font-semibold text-gray-900">
+                      {t("hero.responseTime")}
+                    </div>
                   </div>
                 </div>
               </motion.div>

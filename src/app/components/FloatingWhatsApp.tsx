@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { MessageCircle, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useEffect } from "react";
+import { MessageCircle, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
 
 export const FloatingWhatsApp: React.FC = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -21,13 +23,15 @@ export const FloatingWhatsApp: React.FC = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [showTooltip]);
 
   const handleClick = () => {
-    const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os serviços.');
-    window.open(`https://wa.me/31612345678?text=${message}`, '_blank');
+    const message = encodeURIComponent(
+      "Olá! Gostaria de saber mais sobre os serviços.",
+    );
+    window.open(`https://wa.me/31612345678?text=${message}`, "_blank");
   };
 
   return (
@@ -57,7 +61,7 @@ export const FloatingWhatsApp: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                   <span className="text-sm font-medium text-gray-900">
-                    Precisa de ajuda? Fale comigo!
+                    {t("whatsapp.tooltip")}
                   </span>
                 </div>
                 {/* Arrow */}
@@ -74,7 +78,7 @@ export const FloatingWhatsApp: React.FC = () => {
             className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 flex items-center justify-center transition-all group relative"
           >
             <MessageCircle className="w-8 h-8 text-white" />
-            
+
             {/* Pulse animation */}
             <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20" />
           </motion.button>

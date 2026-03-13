@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
-import { Button } from './ui/button';
+import React, { useState } from "react";
+import { Menu, X, MessageCircle } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { Button } from "./ui/button";
 
 export const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setMobileMenuOpen(false);
     }
   };
@@ -24,28 +24,30 @@ export const Header: React.FC = () => {
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
               <MessageCircle className="w-5 h-5 text-white" />
             </div>
-            <span className="font-semibold text-lg text-gray-900">Professional</span>
+            <span className="font-semibold text-lg text-gray-900">
+              Professional
+            </span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <button
-              onClick={() => scrollToSection('services')}
+              onClick={() => scrollToSection("services")}
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              {t('nav.services')}
+              {t("nav.services")}
             </button>
             <button
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection("about")}
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              {t('nav.about')}
+              {t("nav.about")}
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              {t('nav.contact')}
+              {t("nav.contact")}
             </button>
           </nav>
 
@@ -53,31 +55,31 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex items-center gap-1 bg-gray-100 rounded-full p-1">
               <button
-                onClick={() => setLanguage('pt')}
+                onClick={() => setLanguage("pt")}
                 className={`px-3 py-1.5 rounded-full text-sm transition-all ${
-                  language === 'pt'
-                    ? 'bg-white text-gray-900 shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                  language === "pt"
+                    ? "bg-white text-gray-900 shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 PT
               </button>
               <button
-                onClick={() => setLanguage('en')}
+                onClick={() => setLanguage("en")}
                 className={`px-3 py-1.5 rounded-full text-sm transition-all ${
-                  language === 'en'
-                    ? 'bg-white text-gray-900 shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                  language === "en"
+                    ? "bg-white text-gray-900 shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 EN
               </button>
               <button
-                onClick={() => setLanguage('nl')}
+                onClick={() => setLanguage("nl")}
                 className={`px-3 py-1.5 rounded-full text-sm transition-all ${
-                  language === 'nl'
-                    ? 'bg-white text-gray-900 shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                  language === "nl"
+                    ? "bg-white text-gray-900 shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 NL
@@ -85,7 +87,7 @@ export const Header: React.FC = () => {
             </div>
 
             <Button
-              onClick={() => window.open('https://wa.me/31612345678', '_blank')}
+              onClick={() => window.open("https://wa.me/31612345678", "_blank")}
               className="hidden md:flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-full px-6"
             >
               <MessageCircle className="w-4 h-4" />
@@ -111,54 +113,56 @@ export const Header: React.FC = () => {
           <div className="md:hidden py-4 border-t border-gray-100">
             <nav className="flex flex-col gap-4">
               <button
-                onClick={() => scrollToSection('services')}
+                onClick={() => scrollToSection("services")}
                 className="text-gray-600 hover:text-gray-900 transition-colors text-left"
               >
-                {t('nav.services')}
+                {t("nav.services")}
               </button>
               <button
-                onClick={() => scrollToSection('about')}
+                onClick={() => scrollToSection("about")}
                 className="text-gray-600 hover:text-gray-900 transition-colors text-left"
               >
-                {t('nav.about')}
+                {t("nav.about")}
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection("contact")}
                 className="text-gray-600 hover:text-gray-900 transition-colors text-left"
               >
-                {t('nav.contact')}
+                {t("nav.contact")}
               </button>
-              
+
               {/* Mobile Language Switcher */}
               <div className="flex sm:hidden items-center gap-2 pt-2">
-                <span className="text-sm text-gray-600">Idioma:</span>
+                <span className="text-sm text-gray-600">
+                  {t("header.language")}:
+                </span>
                 <div className="flex gap-2">
                   <button
-                    onClick={() => setLanguage('pt')}
+                    onClick={() => setLanguage("pt")}
                     className={`px-3 py-1.5 rounded-full text-sm transition-all ${
-                      language === 'pt'
-                        ? 'bg-amber-500 text-white'
-                        : 'bg-gray-100 text-gray-600'
+                      language === "pt"
+                        ? "bg-amber-500 text-white"
+                        : "bg-gray-100 text-gray-600"
                     }`}
                   >
                     PT
                   </button>
                   <button
-                    onClick={() => setLanguage('en')}
+                    onClick={() => setLanguage("en")}
                     className={`px-3 py-1.5 rounded-full text-sm transition-all ${
-                      language === 'en'
-                        ? 'bg-amber-500 text-white'
-                        : 'bg-gray-100 text-gray-600'
+                      language === "en"
+                        ? "bg-amber-500 text-white"
+                        : "bg-gray-100 text-gray-600"
                     }`}
                   >
                     EN
                   </button>
                   <button
-                    onClick={() => setLanguage('nl')}
+                    onClick={() => setLanguage("nl")}
                     className={`px-3 py-1.5 rounded-full text-sm transition-all ${
-                      language === 'nl'
-                        ? 'bg-amber-500 text-white'
-                        : 'bg-gray-100 text-gray-600'
+                      language === "nl"
+                        ? "bg-amber-500 text-white"
+                        : "bg-gray-100 text-gray-600"
                     }`}
                   >
                     NL

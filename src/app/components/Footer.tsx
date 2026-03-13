@@ -1,6 +1,6 @@
-import React from 'react';
-import { MessageCircle, Instagram, MapPin, Mail } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+import { MessageCircle, Instagram, MapPin, Mail } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -19,45 +19,45 @@ export const Footer: React.FC = () => {
               <span className="font-semibold text-lg">Professional</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Atendimento profissional para brasileiros na Europa com qualidade e confiança.
+              {t("footer.tagline")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Links Rápidos</h3>
+            <h3 className="font-semibold mb-4">{t("footer.quickLinks")}</h3>
             <ul className="space-y-2">
               <li>
                 <button
                   onClick={() => {
-                    const element = document.getElementById('services');
-                    element?.scrollIntoView({ behavior: 'smooth' });
+                    const element = document.getElementById("services");
+                    element?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Serviços
+                  {t("nav.services")}
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => {
-                    const element = document.getElementById('about');
-                    element?.scrollIntoView({ behavior: 'smooth' });
+                    const element = document.getElementById("about");
+                    element?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Sobre
+                  {t("nav.about")}
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => {
-                    const element = document.getElementById('contact');
-                    element?.scrollIntoView({ behavior: 'smooth' });
+                    const element = document.getElementById("contact");
+                    element?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Contato
+                  {t("nav.contact")}
                 </button>
               </li>
             </ul>
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold mb-4">{t('footer.contact')}</h3>
+            <h3 className="font-semibold mb-4">{t("footer.contact")}</h3>
             <ul className="space-y-3">
               <li>
                 <a
@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
               <li>
                 <div className="flex items-center gap-2 text-gray-400">
                   <MapPin className="w-4 h-4" />
-                  <span>{t('footer.location')}</span>
+                  <span>{t("footer.location")}</span>
                 </div>
               </li>
             </ul>
@@ -98,7 +98,7 @@ export const Footer: React.FC = () => {
 
           {/* Social Media */}
           <div>
-            <h3 className="font-semibold mb-4">Redes Sociais</h3>
+            <h3 className="font-semibold mb-4">{t("footer.social")}</h3>
             <div className="flex gap-3">
               <a
                 href="https://instagram.com"
@@ -124,14 +124,14 @@ export const Footer: React.FC = () => {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Professional. {t('footer.rights')}.
+              © {currentYear} Professional. {t("footer.rights")}.
             </p>
             <div className="flex gap-6 text-sm">
               <button className="text-gray-400 hover:text-white transition-colors">
-                Política de Privacidade
+                {t("footer.privacy")}
               </button>
               <button className="text-gray-400 hover:text-white transition-colors">
-                Termos de Uso
+                {t("footer.terms")}
               </button>
             </div>
           </div>
