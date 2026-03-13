@@ -33,7 +33,7 @@ jobs:
         run: npm run build
 
       - name: Create CNAME
-        run: echo "site.seudominio.com" > dist/CNAME
+        run: echo "exemplo.fredx.dev" > dist/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
